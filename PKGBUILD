@@ -61,8 +61,10 @@ optdepends=('gutenprint: for sophisticated printing only as gimp has built-in cu
             'luajit: LUA scripting support'
             )
 source=('git+https://gitlab.gnome.org/GNOME/gimp.git'
+        "gimp-data::git+https://gitlab.gnome.org/GNOME/gimp-data"
         'linux.gpl')
 sha512sums=('SKIP'
+            'SKIP'
             '6f33d57f242fa8ce04b65e06a712bd54677306a45b22cb853fbe348089cd4673bd4ed91073074fe067166fe8951c370f8bbbc386783e3ed5170d52e9062666fe')
 
 pkgver() {
@@ -71,6 +73,11 @@ pkgver() {
     $(grep -zoP "(?s)^project\(.*?version: '\K[0-9.]+(?=\'.*?\))" ${_pkgname}/meson.build|tr -d '\0') \
     "$(git -C $_pkgname rev-list "$(git -C $_pkgname describe --abbrev=0)"..HEAD --count)" \
     "$(git -C $_pkgname log --pretty=format:'%h' -n 1)"
+}
+
+prepare() {
+  git -C "$srcdir/gimp" config submodule.gimp-data.url "$srcdir/gimp-data"
+  git -C "$srcdir/gimp" -c protocol.file.allow=always submodule update --init
 }
 
 build() {

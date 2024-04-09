@@ -67,7 +67,9 @@ pkgbase = gimp-git
 	provides = gimp
 	conflicts = gimp
 	source = git+https://gitlab.gnome.org/GNOME/gimp.git
+	source = gimp-data::git+https://gitlab.gnome.org/GNOME/gimp-data
 	source = linux.gpl
+	sha512sums = SKIP
 	sha512sums = SKIP
 	sha512sums = 6f33d57f242fa8ce04b65e06a712bd54677306a45b22cb853fbe348089cd4673bd4ed91073074fe067166fe8951c370f8bbbc386783e3ed5170d52e9062666fe
 
