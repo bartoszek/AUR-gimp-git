@@ -27,6 +27,7 @@ pkgbase = gimp-git
 	makedepends = zlib
 	makedepends = gjs
 	makedepends = python-gobject
+	makedepends = python-packaging
 	makedepends = luajit
 	makedepends = meson
 	depends = lcms2>=2.8
