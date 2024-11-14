@@ -10,7 +10,7 @@ _pkgname=${pkgname%-git}
 provides=(gimp)
 conflicts=(gimp)
 epoch=2
-pkgver=2.99.19.r1670.46c9949b7e
+pkgver=3.0.0.RC1.r40.0cd0206917
 pkgrel=1
 pkgdesc="GNU Image Manipulation Program"
 arch=('i686' 'x86_64')
@@ -71,7 +71,7 @@ sha512sums=('SKIP'
 pkgver() {
 # shellcheck disable=SC2183,SC2046
   printf "%s.r%s.%s" \
-    $(grep -zoP "(?s)^project\(.*?version: '\K[0-9.]+(?=\'.*?\))" ${_pkgname}/meson.build|tr -d '\0') \
+    $(grep -zoP "(?s)^project\(.*?version: '\K.*?(?=(\+git)?',)" ${_pkgname}/meson.build|sed 's/-/./g'|tr -d '\0') \
     "$(git -C $_pkgname rev-list "$(git -C $_pkgname describe --abbrev=0)"..HEAD --count)" \
     "$(git -C $_pkgname log --pretty=format:'%h' -n 1)"
 }
