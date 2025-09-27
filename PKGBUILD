@@ -10,13 +10,14 @@ _pkgname=${pkgname%-git}
 provides=(gimp)
 conflicts=(gimp)
 epoch=2
-pkgver=3.0.3.r218.eeed283da2
+pkgver=3.1.5.r184.355d695607
 pkgrel=1
 pkgdesc="GNU Image Manipulation Program"
 arch=('i686' 'x86_64')
 url="https://www.gimp.org"
 license=('GPL' 'LGPL')
 depends=(
+	'libxmu'
 	'lcms2>=2.8'
 	'libwmf>=0.2.8'
 	'icu'
@@ -31,11 +32,11 @@ depends=(
 	'poppler-glib>=0.69.0'
 	'poppler-data>=0.4.9'
 	'openexr>=1.6.1'
-	'mypaint-brushes1>=1.3.0'
+	'mypaint-brushes>=1.5.0'
 	'babl-git>=0.1.114'
 	'gegl-git>=0.4.62'
 	'cairo>=1.14.0'
-	'appstream-glib>=0.7.7'
+	'appstream>=0.16.1'
 	'gobject-introspection>=1.32.0'
 	)
 makedepends+=('git' 'intltool>=0.40.1'

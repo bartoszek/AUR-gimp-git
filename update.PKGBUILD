@@ -5,7 +5,7 @@ srcdir=$PWD/src
 
 declare -A dep_versions
 #readonly -a deps=(pygtk gexiv2 poppler poppler_data libmypaint gtkdoc cairo babl lcms wmf gexiv2 rsvg openexr libmypaint appstream_glib introspection)
-readonly -a deps=(atk babl cairo fontconfig freetype2 gdk_pixbuf gegl exiv2 gexiv2 glib gtk3 harfbuzz lcms libmypaint pango rsvg appstream_glib libtiff liblzma libpng openexr webp libheif webkit poppler poppler_data cairopdf wmf openjpeg jpegxl python3 native_glib )
+readonly -a deps=(atk babl cairo fontconfig freetype2 gdk_pixbuf gegl exiv2 gexiv2 glib gtk3 harfbuzz lcms libmypaint pango rsvg appstream libtiff liblzma libpng openexr webp libheif webkit poppler poppler_data cairopdf wmf openjpeg jpegxl python3 native_glib )
 
 ## add legacy deps from autotools, missing from meson
 dep_versions["_gtkdoc_version"]="1.0"
