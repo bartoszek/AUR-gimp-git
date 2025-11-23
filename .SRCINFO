@@ -31,6 +31,9 @@ pkgbase = gimp-git
 	makedepends = luajit
 	makedepends = meson
 	makedepends = glib2-devel
+	makedepends = libbacktrace
+	makedepends = gi-docgen
+	makedepends = cfitsio
 	depends = lcms2>=2.8
 	depends = libwmf>=0.2.8
 	depends = icu
@@ -65,6 +68,8 @@ pkgbase = gimp-git
 	optdepends = zlib: Compression routines
 	optdepends = gjs: JavaScript scripting support
 	optdepends = luajit: LUA scripting support
+	optdepends = cfitsio: for FITS support
+	optdepends = gvfs: for HTTP/S support (and many other schemes)
 	provides = gimp
 	conflicts = gimp
 	source = git+https://gitlab.gnome.org/GNOME/gimp.git
