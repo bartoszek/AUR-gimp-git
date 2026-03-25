@@ -34,6 +34,10 @@ pkgbase = gimp-git
 	makedepends = libbacktrace
 	makedepends = gi-docgen
 	makedepends = cfitsio
+	makedepends = python-cairo
+	makedepends = xdg-utils
+	makedepends = bash-completion
+	makedepends = vala
 	depends = lcms2>=2.8
 	depends = libwmf>=0.2.8
 	depends = icu
@@ -71,6 +75,7 @@ pkgbase = gimp-git
 	optdepends = luajit: LUA scripting support
 	optdepends = cfitsio: for FITS support
 	optdepends = gvfs: for HTTP/S support (and many other schemes)
+	optdepends = xdg-utils: xdg-email required for sending support email
 	provides = gimp
 	conflicts = gimp
 	source = git+https://gitlab.gnome.org/GNOME/gimp.git
